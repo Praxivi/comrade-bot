@@ -1,15 +1,15 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 
-const token = 'NTc4MzA3NzE5NjAyMjQxNTY3.XNxtvg.kWF4hsyO1wDzMxvZL4g0Ci2kwAM';
+client.on('ready', () => {
+    console.log('I am ready!');
+});
 
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.reply('pong');
+  	}
+});
 
-const PREFIX = '=';
-
-var version ='1.0.1';
-
-bot.on('ready', () => {
-    console.log('Bot is ready')
-    
-    client.loginprocess.env.BOT_TOKEN);
-})
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
